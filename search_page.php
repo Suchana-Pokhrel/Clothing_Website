@@ -150,7 +150,7 @@ if (isset($_POST['user_id'])) {
 
     $search = $_POST['search'];
 
-    $conn = new mysqli('localhost', 'root', '', 'ecommerce');
+    $conn = new mysqli('localhost', 'root', '', 'fashion');
 
     if ($conn->connect_error) {
       die("Connection Error: ");

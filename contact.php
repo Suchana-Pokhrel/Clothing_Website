@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
     }
 
     button[type="submit"] {
-        width: 50px;
+        width: 100px;
         border: none;
         color: whitesmoke;
         background-color: darkred;

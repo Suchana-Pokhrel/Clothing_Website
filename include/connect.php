@@ -3,10 +3,13 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "ecommerce";
+$database = "fashion";
 
-$conn = new mysqli('localhost', 'root', '', 'ecommerce');
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
-if ($conn == isset($connect_error)) {
-  die("Connection failed: " . $conn == $connect_error);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+?>

@@ -76,6 +76,10 @@ if (isset($_POST['order'])) {
     rel="stylesheet">
 
   <style>
+    .logo img{
+      width:100%;
+    }
+
     input[type="search"] {
       width: 260px;
       height: 30px;

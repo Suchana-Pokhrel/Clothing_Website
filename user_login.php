@@ -1,25 +1,28 @@
 <?php
 
-session_start();
-
 include 'include/connect.php';
 
-if (isset($_POST['submit'])) {
-  $email = htmlspecialchars(trim($_POST['email']));
-  $password = htmlspecialchars(trim($_POST['password']));
+session_start();
 
-  $query = "SELECT * FROM `users` WHERE email='$email' and password='$password'";
+if (isset($_POST['submit'])) {
+  $email = $_POST['email'];
+  $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $password = $_POST['password']; // Retrieve and sanitize email
+  $password = htmlspecialchars(trim($_POST['password'])); // Retrieve and sanitize password
+
+  $query = "SELECT * FROM `users` WHERE email='$email' AND password='$password'";
   $result = mysqli_query($conn, $query);
 
   if ($result && mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['user_id'] = $row['id'];
-    header('Location: index.php');
-    exit;
+      $row = mysqli_fetch_assoc($result);
+      $_SESSION['user_id'] = $row['id'];
+      header('Location: index.php');
+      exit;
   } else {
-    echo "<script>alert('Invalid email or password.');</script>";
+      echo "<script>alert('Invalid email or password.');</script>";
   }
 }
+
 
 ?>
 

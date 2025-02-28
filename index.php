@@ -259,24 +259,6 @@ if (isset($_POST['user_id'])) {
         <h2>New Arrivals</h2>
         <p>Summer Collection New Modern Design</p>
         <div class="pro-container">
-            <!---DIV CLASS PRO HALERA GAR SAB MILXA CSS->
-             <div class="pro">
-                <img src="image/products/new-1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h3>Men's T-Shirt</h3>
-                    <div class="star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4>$20</h4>
-                </div>
-                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-            </div>-->
-
             <?php
             $query = "SELECT * FROM products";
             $result = mysqli_query($conn, $query);
